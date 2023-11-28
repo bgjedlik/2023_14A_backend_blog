@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Blog",
-    "dateExported": "2023-11-14T12:55:51.192Z",
+    "dateExported": "2023-11-28T13:19:56.193Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -22,6 +22,57 @@
                 "raw": "{\n  \"name\" : \"BG\",\n  \"email\" : \"bg@bg.hu\",\n  \"password\" : \"a\",\n  \"role\" : 0\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "18329120-e455-44f1-95e0-aecba3316ae1",
+            "colId": "3ea48819-7e22-46cb-b212-626f0771c288",
+            "containerId": "",
+            "name": "login",
+            "url": "http://127.0.0.1:8000/api/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-14T13:07:51.175Z",
+            "modified": "2023-11-14T13:11:44.023Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\" : \"bg@bg.hu\",\n  \"password\" : \"a\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4b367a16-e5b5-42b8-be5e-4a6ce0cb0106",
+            "colId": "3ea48819-7e22-46cb-b212-626f0771c288",
+            "containerId": "",
+            "name": "logout",
+            "url": "http://127.0.0.1:8000/api/logout",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-14T13:14:21.107Z",
+            "modified": "2023-11-14T13:17:21.637Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "9|8GkhlPLr453HzAaY4w6p7bhYXWntt4zDlvfoe8Gqee78bbbb"
+            },
+            "tests": []
+        },
+        {
+            "_id": "456d0ae7-0817-4a6f-8a80-73ca6acce5c1",
+            "colId": "3ea48819-7e22-46cb-b212-626f0771c288",
+            "containerId": "",
+            "name": "blog_list",
+            "url": "http://127.0.0.1:8000/api/blog",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-11-28T13:17:51.435Z",
+            "modified": "2023-11-28T13:18:19.290Z",
+            "headers": [],
+            "params": [],
             "tests": []
         }
     ]
