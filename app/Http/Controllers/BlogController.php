@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Http\Resources\Blog as ResourceBlog;
 
-class BlogController extends Controller
+class BlogController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::with('user')->get();
-        return $blogs;
+        return $this->sendResponse(ResourceBlog::collection($blogs),'Bejegyzések elküldve.');
     }
 
     /**
