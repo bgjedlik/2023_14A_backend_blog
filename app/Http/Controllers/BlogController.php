@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Resources\Blog as ResourceBlog;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class BlogController extends BaseController
 {
@@ -30,7 +32,22 @@ class BlogController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $input = $request->all();
+
+        $validator = Validator::make($input,[
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return $this->sendError($validator->errors(),[],400);
+        }
+
+        $input['user_id'] = $user->id;
+
+        $blog = Blog::create($input);
+        return $this->sendResponse(new ResourceBlog($blog),'Bejegyzés létrehozva.' );
     }
 
     /**
